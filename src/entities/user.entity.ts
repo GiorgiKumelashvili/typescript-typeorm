@@ -1,5 +1,16 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  OneToOne,
+  JoinColumn,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
+import { Computer } from './computer.entity';
 import { UserDetails } from './details.entity';
+import { UserCountry } from './usercountry.entity';
 
 @Entity()
 export class User {
@@ -17,4 +28,11 @@ export class User {
 
   @OneToMany(() => UserDetails, (details) => details.user)
   details: UserDetails[];
+
+  @OneToOne(() => UserCountry, (country) => country.user)
+  country: UserCountry;
+
+  @ManyToMany(() => Computer, (computer) => computer.users)
+  @JoinTable()
+  computers: Computer[];
 }

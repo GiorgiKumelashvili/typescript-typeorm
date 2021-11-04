@@ -5,8 +5,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { UserDetails } from './entities/details.entity';
 import { UserDetailsMore } from './entities/detailsmore.entity';
+import { UserCountry } from './entities/usercountry.entity';
+import { Computer } from './entities/computer.entity';
 
-const entities = [User, UserDetails, UserDetailsMore];
+const entities = [User, UserDetails, UserDetailsMore, UserCountry, Computer];
 
 @Module({
   imports: [
