@@ -18,7 +18,7 @@ const entities = [User, UserDetails, UserDetailsMore, UserCountry, Computer];
       port: 5432,
       username: 'giorgi',
       password: 'giorgi',
-      database: 'testing_orm',
+      database: 'typeorm',
       entities: entities,
       synchronize: true,
       autoLoadEntities: true,
